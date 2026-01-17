@@ -51,7 +51,7 @@ Instead of processing the *entire* spectrogram, ESO:
 
 ⚠️ **Warning:** ESO requires Python **< 3.13**. Please use Python 3.12 or earlier.
 
-<<<<<<< HEAD
+
 =======
 #### Data Structure 
 
@@ -72,7 +72,7 @@ Data/
       └── ...
 ```
 #### Install Eso from the github 
->>>>>>> 8405179310318c6c8065cb85c9b7a7aabb2575c5
+
 1. **Clone the repository**
     ```bash
     git clone https://github.com/***/ESO.git
