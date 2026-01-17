@@ -1,24 +1,5 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/ufuk-cakir/ufuk-cakir.github.io/7d1d9f2b3a8b7b3db0e6ecca77fbd7b332cd6c84/assets/images/eso%20logo.png" alt="ESO logo" width="200"/>
-</p>
+<img width="1078" height="307" alt="image" src="https://github.com/user-attachments/assets/e50a685e-2b73-4c56-a6f3-f7ed118639c8" />
 
-<h1 align="center">ESO: Evolutionary Spectrogram Optimisation 🧬🔊</h1>
-
-<p align="center">
-  <a href="https://opensource.org/licenses/MIT">
-    <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" />
-  </a>
-  <a href="https://github.com/ufuk-cakir/eso/actions/workflows/ci.yml">
-    <img src="https://img.shields.io/github/actions/workflow/status/ufuk-cakir/eso/ci.yml?branch=main" alt="GitHub Workflow Status" />
-  </a>
-  <a href="https://eso.readthedocs.io/">
-    <img src="https://readthedocs.org/projects/eso/badge/" alt="Documentation Status" />
-  </a>
-  <a href="https://codecov.io/gh/ufuk-cakir/eso">
-    <img src="https://codecov.io/gh/ufuk-cakir/eso/branch/main/graph/badge.svg" alt="codecov" />
-  </a>
-</p>
-Optimising spectrogram inputs for efficient passive acoustic monitoring using genetic algorithms. Based on our paper presented at the ICLR 2024 ML4RS Workshop.
 
 ---
 
@@ -68,31 +49,90 @@ Instead of processing the *entire* spectrogram, ESO:
 
 ### Getting Started 🛠️
 
+⚠️ **Warning:** ESO requires Python **< 3.13**. Please use Python 3.12 or earlier.
+
+<<<<<<< HEAD
+=======
+#### Data Structure 
+
+Organize your data in a folder named `Data`, containing the acoustic recordings in a subfolder `Audio` and the corresponding annotations in a subfolder `Annotations`.  
+Each annotation file must have the **same name** as its associated audio file.
+
+```
+Data/
+├── Audio/
+│     ├──HGSM3AB_0+1_20160303_060100
+│     ├──HGSM3AB_0+1_20160304_060000
+│     ├──HGSM3AB_0+1_20160305_055900
+│     └── ...
+└── Annotations/
+      ├──HGSM3AB_0+1_20160303_060100
+      ├──HGSM3AB_0+1_20160304_060000
+      ├──HGSM3AB_0+1_20160305_055900
+      └── ...
+```
+#### Install Eso from the github 
+>>>>>>> 8405179310318c6c8065cb85c9b7a7aabb2575c5
 1. **Clone the repository**
     ```bash
-    git clone https://github.com/ufuk-cakir/ESO.git
+    git clone https://github.com/***/ESO.git
     cd ESO
     ```
 
 2. **Set up a virtual environment** (recommended)
     ```bash
-    python -m venv venv
+    # On Linux/macOS
+    python3.12 -m venv myenv
+    source venv/bin/activate
+    # On Windows : make sure your venv uses the correct Python version executable (3.12).
+    python -m venv myenv
+    venv\Scripts\activate
+    ```
+
+    Or with conda
+    ```bash
+    conda create --name myenv python==3.12 pip
+    conda activate myenv
+    ```
+
+4. **Install PyTorch** based on your system configuration  
+   (see [PyTorch](https://pytorch.org/get-started/locally/) to choose the correct version for your machine)
+    ```bash
+    pip install torch --index-url https://download.pytorch.org/whl/cu126
+    ```
+
+5. **Install other dependencies**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+#### Install Eso from pip 
+1. **Set up a virtual environment** (recommended)
+    ```bash
+    python -m venv myenv
     # On Linux/macOS
     source venv/bin/activate
     # On Windows
     venv\Scripts\activate
     ```
 
-3. **Install PyTorch** based on your system configuration  
+    Or with conda
+    ```bash
+    conda create --name myenv python==3.12 pip
+    conda activate myenv
+    ```
+
+2. **Install PyTorch** based on your system configuration  
    (see [PyTorch](https://pytorch.org/get-started/locally/) to choose the correct version for your machine)
     ```bash
     pip install torch --index-url https://download.pytorch.org/whl/cu126
     ```
 
-4. **Install other dependencies**
+3. **Install ESO with pip**
     ```bash
-    pip install -r requirements.txt
+    pip install eso
     ```
+
 
 ### Running ESO 🏃
 
@@ -103,17 +143,4 @@ Instead of processing the *entire* spectrogram, ESO:
     The GUI provides options to select data, configure hyperparameters, run ESO, and monitor progress (including TensorBoard).
 
 *   **As a Python Package:**
-    Import the necessary modules from the `eso` package in your Python scripts. (Refer to the documentation or example scripts within the repository for specific usage details).
-
-### Citation ✍️
-
-If you use ESO in your research or work, please cite our paper:
-
-```bibtex
-@inproceedings{cakir2024eso,
-  title={{ESO: Evolutionary Spectrogram Optimisation for Passive Acoustic Monitoring}},
-  author={Ufuk {\c{C}}ak{\i}r and Lor{\`e}ne Jeantet and Joel Lontsi and Emmanuel Dufourq},
-  booktitle={ICLR 2024 Machine Learning for Remote Sensing (ML4RS) Workshop},
-  year={2024},
-  url={https://ml-for-rs.github.io/iclr2024/camera_ready/papers/51.pdf}
-}
+    Import the necessary modules from the `eso` package in your Python scripts. (Refer to the documentation or notebook within the repository for specific usage details).
